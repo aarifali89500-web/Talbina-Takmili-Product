@@ -1,0 +1,41 @@
+*{box-sizing:border-box}html,body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:#2a2521;background:#faf6ef}
+.topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#7a4d2a;color:#fff}
+.brand{display:flex;gap:10px;align-items:center}.logo{width:40px;height:40px;object-fit:contain}
+h1{margin:0;font-size:20px}small{opacity:.9}
+.actions{display:flex;gap:8px;align-items:center}
+.btn{background:#5fb261;border:none;color:#fff;padding:10px 14px;border-radius:10px;cursor:pointer}
+.btn.brown{background:#7a4d2a}.btn.whatsapp{background:#25d366}
+.btn.outline{background:transparent;border:1px solid #fff;color:#fff}
+.btn.small{padding:6px 10px;border-radius:8px}
+.btn.danger{background:#d9534f}
+.hidden{display:none}
+.container{max-width:980px;margin:20px auto;padding:0 12px}
+.note .pill{display:inline-flex;gap:8px;align-items:center;background:#ffe7e7;border-radius:12px;padding:10px 14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.06);padding:14px}
+.card.product{padding:0;overflow:hidden}
+.card.product .pimg{width:100%;height:170px;object-fit:cover;background:#eee}
+.pbody{padding:12px}
+.priceRow{display:flex;gap:6px;align-items:center;margin:6px 0}
+.qtyRow{display:flex;gap:8px;align-items:center;margin:8px 0}
+.qty{width:70px;padding:8px;border:1px solid #ddd;border-radius:8px}
+.muted{color:#6b6764}
+.video{aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden}
+.video iframe{width:100%;height:100%}
+.qr{width:160px;margin-top:8px;border-radius:8px}
+.footer{padding:24px;text-align:center;color:#e7e1da;background:#2e2925}
+.file img{width:100%;height:140px;object-fit:cover;background:#eee;border-radius:10px}
+.grid{display:grid;gap:10px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;background:#fff}
+.row{display:flex;gap:10px;align-items:center}
+.adminItem{display:flex;gap:10px;align-items:center}
+.adminItem .thumb{width:64px;height:64px;object-fit:cover;border-radius:8px;background:#eee}
+.grow{flex:1}
+.quote{background:#fff;padding:14px;border-left:4px solid #7a4d2a;border-radius:8px}
+@media (prefers-color-scheme: dark){
+  html,body{background:#151311;color:#f2ece6}
+  .card{background:#1e1b18}
+  .footer{background:#0e0c0a}
+  .btn.outline{border-color:#aaa;color:#eee}
+          }
