@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Admin • Talbina</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="admin.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><strong>Admin</strong></div>
+  <nav class="actions">
+    <a class="btn outline" href="index.html">← Site</a>
+    <button id="logoutBtn" class="btn">Logout</button>
+  </nav>
+</header>
+
+<main class="container">
+  <section id="authBox" class="card">
+    <h2>Login</h2>
+    <p class="muted">Use Firebase Email/Password (owner only).</p>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button class="btn">Login</button>
+    </form>
+  </section>
+
+  <section id="adminBox" class="hidden">
+    <h2>Products</h2>
+    <form id="prodForm" class="card grid">
+      <input name="id" type="hidden">
+      <div class="grid2">
+        <input name="name_hi" placeholder="Name (Hindi)" required>
+        <input name="name_ur" placeholder="نام (Urdu)" required>
+        <input name="name_en" placeholder="Name (English)" required>
+      </div>
+      <div class="grid3">
+        <input name="priceLarge" type="number" placeholder="Large ₹" required>
+        <input name="priceSmall" type="number" placeholder="Small ₹" required>
+        <input name="weight" placeholder="Weight e.g. 250g" required>
+      </div>
+      <textarea name="benefits_hi" placeholder="Faide (Hindi)"></textarea>
+      <textarea name="benefits_ur" placeholder="فوائد (Urdu)"></textarea>
+      <textarea name="benefits_en" placeholder="Benefits (English)"></textarea>
+
+      <textarea name="illness_hi" placeholder="Kis marz me (Hindi)"></textarea>
+      <textarea name="illness_ur" placeholder="کن امراض میں (Urdu)"></textarea>
+      <textarea name="illness_en" placeholder="Helps in (English)"></textarea>
+
+      <textarea name="recipe_hi" placeholder="Recipe (Hindi)"></textarea>
+      <textarea name="recipe_ur" placeholder="ترکیب (Urdu)"></textarea>
+      <textarea name="recipe_en" placeholder="Recipe (English)"></textarea>
+
+      <input name="hadith" placeholder="Hadith reference (text)">
+      <input name="videoUrl" placeholder="YouTube/MP4 URL (optional)">
+
+      <div class="grid2">
+        <input name="imageUrl" placeholder="Image URL (or upload below)">
+        <input type="file" id="imageFile" accept="image/*">
+      </div>
+
+      <div class="row">
+        <button class="btn" id="saveBtn">Save / Update</button>
+        <button class="btn outline" type="reset" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <h3>All Products</h3>
+    <div id="adminList" class="cards"></div>
+  </section>
+</main>
+
+<template id="adminItemTpl">
+  <div class="card adminItem">
+    <img class="thumb" alt="">
+    <div class="grow">
+      <strong class="nm"></strong>
+      <div class="muted sm"><span class="lg"></span> • <span class="smP"></span> • <span class="wt"></span></div>
+    </div>
+    <div class="row">
+      <button class="btn small edit">Edit</button>
+      <button class="btn small danger del">Delete</button>
+    </div>
+  </div>
+</template>
+</body>
+</html>
