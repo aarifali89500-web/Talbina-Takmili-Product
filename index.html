@@ -1,203 +1,86 @@
-<!doctype html>
-<html lang="hi">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Talbina Takmeeli Product | तकमीली तलबीना</title>
-  <meta name="theme-color" content="#7a4d2a">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="assets/icon-192.png">
-  <meta name="description" content="सुन्नत पर आधारित Talbina – फायदे, रेसिपी, हदीस, प्रोडक्ट कीमतें, WhatsApp ऑर्डर, सर्टिफिकेट।">
-  <!-- Firebase SDK (module, बिना npm) -->
-  <script type="module" src="app.js" defer></script>
-</head>
-<body>
-<header class="topbar">
-  <div class="brand">
-    <img src="assets/logo.png" alt="Takmeeli Talbina" class="logo">
-    <div>
-      <h1 data-i="title">Takmeeli Talbina</h1>
-      <small data-i="subtitle">सुन्‍नत सेहत का तोहफ़ा • Sunnah gift of health</small>
-    </div>
-  </div>
 
-  <nav class="actions">
-    <select id="langSel" aria-label="language">
-      <option value="hi">हिन्दी</option>
-      <option value="ur">اُردو</option>
-      <option value="en">English</option>
-    </select>
-    <a class="btn outline" href="admin.html" data-i="admin">Admin</a>
-    <button id="btnInstall" class="btn hidden" data-i="install">Install App</button>
-  </nav>
-</header>
-
-<section class="note">
-  <div class="pill">
-    <span class="emoji">🚫</span>
-    <span data-i="noReturn">रिटर्न नहीं होगा • 7% ऑनलाइन/कैश डिस्काउंट • वजन: 250 ग्राम</span>
-  </div>
-</section>
-
-<main class="container">
-  <h2 data-i="products">Products / پروڈکٹس / उत्पाद</h2>
-  <div id="productList" class="cards"></div>
-
-  <section class="cta-row">
-    <a id="waCTA" class="btn whatsapp" target="_blank" rel="noopener">WhatsApp Order</a>
-    <a id="emailCTA" class="btn brown" href="mailto:talbinatakmili@gmail.com">Email Us</a>
-  </section>
-
-  <section>
-    <h2 data-i="hadith">Hadith / حدیث / हदीस</h2>
-    <blockquote class="quote" id="hadithBox">
-      “Talbeena soothes the heart of the sick and relieves some of their sorrow.” — Sahih Bukhari
-    </blockquote>
-    <small data-i="hadithRef">حوالہ/Reference: Sahih Bukhari (Book of Medicine)</small>
-  </section>
-
-  <section>
-    <h2 data-i="certs">Certificates / سرٹیفکیٹس / प्रमाण पत्र</h2>
-    <div class="cards">
-      <!-- अपनी PDFs/Images assets/ में रखें -->
-      <a class="card file" href="assets/certificate-1.pdf" target="_blank" rel="noopener">
-        <img src="assets/certificate-thumb.png" alt="Certificate">
-        <div>Certificate</div>
-      </a>
-      <a class="card file" href="assets/certificate-2.pdf" target="_blank" rel="noopener">
-        <img src="assets/certificate-thumb.png" alt="Certificate">
-        <div>Certificate</div>
-      </a>
-    </div>
-  </section>
-
-  <section>
-    <h2 data-i="recipe">Recipe / ترکیب / विधि</h2>
-    <p id="recipeText">
-      1–2 tbsp Talbina powder in warm milk/water, stir well, simmer 3–5 mins. Add honey or dates to taste.
-    </p>
-  </section>
-
-  <section>
-    <h2 data-i="videos">Videos</h2>
-    <!-- YouTube/Local clip -->
-    <div class="video">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID"
-        title="Talbina video" allowfullscreen loading="lazy"></iframe>
-    </div>
-  </section>
-
-  <section>
-    <h2 data-i="contact">Contact</h2>
-    <p>📞 9997007267 • ✉️ <a href="mailto:talbinatakmili@gmail.com">talbinatakmili@gmail.com</a></p>
-    <p data-i="upi">UPI: (आप बाद में admin में जोड़ें)</p>
-    <img src="assets/qr-upi.png" alt="UPI QR" class="qr">
-    <div class="share-row">
-      <button class="btn outline" id="shareBtn" data-i="share">Share</button>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  © 2025 Takmeeli Talbina — <span data-i="noReturnShort">No Returns • 7% Online/Cash Discount</span>
-</footer>
-
-<!-- Template for product cards (JS भरेगा) -->
-<template id="productTpl">
-  <div class="card product">
-    <img class="pimg" alt="product image" loading="lazy">
-    <div class="pbody">
-      <h3 class="pname"></h3>
-      <div class="priceRow">
-        <label data-i="large">Large ₹</label><span class="pLarge"></span>
-        <span> • </span>
-        <label data-i="small">Small ₹</label><span class="pSmall"></span>
-        <span class="muted"> • </span>
-        <span class="pWeight"></span>
-      </div>
-      <p class="muted pdesc"></p>
-      <div class="qtyRow">
-        <input type="number" min="1" value="1" class="qty">
-        <button class="btn whatsapp wbtn" data-i="order">Order on WhatsApp</button>
-      </div>
-      <details>
-        <summary data-i="details">Details</summary>
-        <div class="detailsTxt"></div>
-      </details>
-    </div>
-  </div>
-</template>
-</body>
-</html>
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>तलबीना तकमीली प्रोडक्ट</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: green;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    section {
-      padding: 20px;
-    }
-    h2 {
-      color: darkgreen;
-    }
-    .btn {
-      display: inline-block;
-      background-color: green;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-    .btn:hover {
-      background-color: darkgreen;
-    }
-    #certificates {
-      text-align: center;
-      margin: 20px 0;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Takmeeli Talbina Products</title>
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<header>
-  <h1>तलबीना तकमीली प्रोडक्ट</h1>
+<!-- Header -->
+<header class="header">
+  <img src="assets/assets/logo.png" alt="Talbina Logo" class="logo">
+  <h1>Takmeeli Talbina Products</h1>
 </header>
 
-<section id="about">
-  <h2>हमारे बारे में</h2>
-  <p>तलबीना एक सुन्नत खाद्य पदार्थ है, जो सेहत के लिए फायदेमंद है।</p>
+<!-- Products -->
+<section class="products">
+  <h2>📦 Products</h2>
+  <div class="product">
+    <img src="assets/assets/product1.png" alt="Product 1">
+    <h3>Milk Mawa Flavour</h3>
+    <p>Price: ₹250 (250g)</p>
+  </div>
+  <div class="product">
+    <img src="assets/assets/product2.png" alt="Product 2">
+    <h3>Vanilla Flavour</h3>
+    <p>Price: ₹250 (250g)</p>
+  </div>
+  <div class="product">
+    <img src="assets/assets/product3.png" alt="Product 3">
+    <h3>Elaichi Flavour</h3>
+    <p>Price: ₹270 (250g)</p>
+  </div>
 </section>
 
-<section id="certificates">
-  <h2>Certificates</h2>
-  <p>हमारे असली सर्टिफिकेट यहाँ से डाउनलोड करें:</p>
-  <a href="https://raw.githubusercontent.com/aarifali89500-web/Talbina-Takmili-Product/0042b3ad9ae380b6a8faa1920f246b6e6a779352/talbina_full_assets_small.pdf" 
-     download 
-     class="btn">
-     📄 Download Certificate
-  </a>
+<!-- Benefits -->
+<section class="benefits">
+  <h2>🌿 Talbina ke Faide</h2>
+  <ul>
+    <li>Hadees: Rasool Allah ﷺ ne farmaya...</li>
+    <li>Body ko Energy deta hai</li>
+    <li>Hazma behtar banata hai</li>
+    <li>Heart health ke liye faida mand</li>
+  </ul>
 </section>
 
-<section id="contact">
-  <h2>संपर्क करें</h2>
-  <p>📞 9997007267</p>
-  <p>📧 talbinatakmili@gmail.com</p>
+<!-- Certificates -->
+<section class="certificates">
+  <h2>📜 Certificates</h2>
+  <img src="assets/assets/certificate1.png" alt="Certificate 1">
+  <img src="assets/assets/certificate2.png" alt="Certificate 2">
+  <a href="assets/assets/talbina_certificate.pdf" download>Download Certificate (PDF)</a>
 </section>
+
+<!-- Recipe -->
+<section class="recipe">
+  <h2>🍲 Recipe</h2>
+  <p>1. Pani ya doodh garam karein</p>
+  <p>2. Talbina powder daalein</p>
+  <p>3. Halka gadhapan aane tak pakaayein</p>
+</section>
+
+<!-- Video -->
+<section class="video">
+  <h2>🎥 Video</h2>
+  <iframe width="300" height="200" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<!-- Contact -->
+<section class="contact">
+  <h2>📞 Contact</h2>
+  <p>Phone: 9997007267</p>
+  <p>Email: <a href="mailto:talbinatakmili@gmail.com">talbinatakmili@gmail.com</a></p>
+  <p>UPI: 9997007267@upi</p>
+  <img src="assets/assets/upi_qr.png" alt="UPI QR" class="qr">
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Takmeeli Talbina Products | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
