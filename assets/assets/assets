@@ -1,10 +1,55 @@
-// Only authenticated users can write; public read
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /products/{doc} {
-      allow read: if true;
-      allow write: if request.auth != null;
-    }
-  }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fafafa;
+  color: #333;
+}
+
+.header {
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+  border-bottom: 2px solid #eee;
+}
+
+.logo {
+  max-width: 120px;
+}
+
+.products {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.product {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  width: 30%;
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.benefits, .certificates, .recipe, .video, .contact {
+  padding: 20px;
+  background: white;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.certificates img, .qr {
+  max-width: 150px;
+  margin: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #222;
+  color: white;
 }
